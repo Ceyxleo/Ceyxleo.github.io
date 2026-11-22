@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en" data-view="research">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lingbo Li, Ph.D.</title>
+  <meta name="description" content="Lingbo Li, Ph.D. — postdoctoral researcher at Lehigh University working on hydrology, Earth system modeling and environmental machine learning: river carbon, lakes, groundwater–reservoir coupling and global geospatial data products." />
+  <meta name="author" content="Lingbo Li" />
+  <link rel="canonical" href="https://ceyxleo.github.io/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Lingbo Li, Ph.D. — Hydrology, Earth System Modeling & Environmental AI" />
+  <meta property="og:description" content="Process-based models, observations and machine learning for water, carbon and river networks. Publications, projects, data and code." />
+  <meta property="og:url" content="https://ceyxleo.github.io/" />
+  <meta property="og:image" content="https://ceyxleo.github.io/assets/global-doc-map.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f6e7a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Pick the view before first paint: ?view= wins, then the last choice, then "research".
+    (function () {
+      var v = "research";
+      try {
+        var p = new URLSearchParams(location.search).get("view");
+        if (p === "industry" || p === "research") { v = p; }
+        else {
+          var s = localStorage.getItem("ll-view");
+          if (s === "industry" || s === "research") { v = s; }
+        }
+      } catch (e) {}
+      document.documentElement.setAttribute("data-view", v);
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lingbo Li",
+    "honorificSuffix": "Ph.D.",
+    "jobTitle": "Postdoctoral Researcher",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "Lehigh University" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Houston" },
+      { "@type": "CollegeOrUniversity", "name": "University at Buffalo" },
+      { "@type": "CollegeOrUniversity", "name": "Chang'an University" }
+    ],
+    "knowsAbout": ["Hydrology", "Earth system modeling", "E3SM", "Riverine biogeochemistry", "Machine learning", "Geospatial data", "High-performance computing"],
+    "email": "mailto:lingboli6@gmail.com",
+    "url": "https://ceyxleo.github.io/",
+    "sameAs": [
+      "https://scholar.google.com/citations?user=C4_X7jQAAAAJ",
+      "https://github.com/Ceyxleo",
+      "https://www.linkedin.com/in/lingbo-li-ph-d-023a43292/",
+      "https://orcid.org/0009-0007-9691-5369"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="Lingbo Li, back to top">
+        <span class="mark" aria-hidden="true">LL</span>
+        <span class="brand-name">Lingbo Li</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#data-code">Data &amp; Code</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="lens" role="group" aria-label="Choose the profile view">
+        <span class="lens-label">View</span>
+        <button type="button" data-set-view="research" aria-pressed="true">Research</button>
+        <button type="button" data-set-view="industry" aria-pressed="false">Industry</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" style="--r:0; --i:0">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Postdoctoral Researcher · Lehigh University</p>
+          <h1>Lingbo Li, Ph.D.</h1>
+          <p class="tagline r-only">Hydrology · Earth System Modeling · Riverine Biogeochemistry · Environmental AI</p>
+          <p class="tagline i-only">Scientific Machine Learning · Geospatial Data Products · Simulation Software &amp; HPC</p>
+
+          <div class="bio r-only">
+            <p>I study how water, carbon and human management interact across river networks. My work combines process-based Earth system models with observation-constrained machine learning to represent land-to-river carbon transfer, lake processes, and the exchanges among groundwater, reservoirs and rivers.</p>
+            <p>My doctoral research produced national maps of dissolved organic carbon transformation rates and the ELM-MOSART-DOC river carbon model in E3SM. At Lehigh I develop MOSART-Lake, couple groundwater and reservoir-policy models in the DOE RIVER-AI project, and build global environmental data products.</p>
+          </div>
+          <div class="bio i-only">
+            <p>I turn heterogeneous environmental data and hard scientific questions into reproducible models, validated predictions and usable data products. I write Python and Fortran, run large simulations on DOE supercomputers, and build interpretable machine-learning workflows that scale to millions of catchments and river reaches.</p>
+            <p>Recent work includes an LSTM emulator deployed across ~50,000 lake objects, coupling interfaces between a river model, a groundwater emulator and LLM-driven reservoir policies, and global geospatial ML products released with open data and code.</p>
+          </div>
+
+          <ul class="links" aria-label="Profiles">
+            <li><a class="btn btn-primary" href="mailto:lingboli6@gmail.com">Email me</a></li>
+            <li><a class="btn" href="https://scholar.google.com/citations?user=C4_X7jQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li><a class="btn" href="https://github.com/Ceyxleo" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a class="btn" href="https://www.linkedin.com/in/lingbo-li-ph-d-023a43292/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a class="btn" href="https://orcid.org/0009-0007-9691-5369" target="_blank" rel="noopener">ORCID</a></li>
+          </ul>
+        </div>
+
+        <aside class="glance" aria-label="At a glance">
+          <dl class="stats">
+            <div><dt>Peer-reviewed papers</dt><dd>5</dd><p>3 as first author, incl. JAMES, ESSD and Water Research</p></div>
+            <div><dt>Citations</dt><dd>320</dd><p>Google Scholar, November 2026</p></div>
+            <div><dt>Open data &amp; software</dt><dd>8</dd><p>releases with Zenodo DOIs</p></div>
+            <div><dt>River reaches mapped</dt><dd>8.5M</dd><p>plus 2.6M U.S. and 1.03M global catchments</p></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ THEMES / CAPABILITIES ============ -->
+    <section class="section" id="about" style="--r:1; --i:1" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="kicker r-only">Research themes</p>
+        <p class="kicker i-only">What I bring</p>
+        <h2 id="about-title"><span class="r-only">Models, observations and machine learning for water and carbon</span><span class="i-only">From raw environmental data to validated, reproducible products</span></h2>
+
+        <div class="themes r-only">
+          <article class="theme">
+            <h3>Hybrid hydrologic modeling</h3>
+            <p>Pairing process-based models (E3SM, ELM, MOSART) with machine-learning parameterizations and emulators, and checking them against conservation and observations.</p>
+          </article>
+          <article class="theme">
+            <h3>Land-to-river carbon</h3>
+            <p>How dissolved organic carbon leaves soils, moves through river networks and is altered by reservoirs, from catchment maps to a coupled river model.</p>
+          </article>
+          <article class="theme">
+            <h3>Global environmental data</h3>
+            <p>Observation-constrained maps for millions of catchments and river reaches: DOC transformation rates, riverbed grain size and lake parameters.</p>
+          </article>
+          <article class="theme">
+            <h3>Lakes, reservoirs &amp; groundwater</h3>
+            <p>Lake water and heat budgets with snow and ice, groundwater–river exchange, and reservoir operations — including AI-based policies — in managed basins.</p>
+          </article>
+        </div>
+
+        <div class="themes i-only">
+          <article class="theme">
+            <h3>Interpretable machine learning</h3>
+            <p>XGBoost and tree ensembles with SHAP, feature screening and sensitivity analysis; LSTM emulators with explicit train/test separation.</p>
+          </article>
+          <article class="theme">
+            <h3>Geospatial data engineering</h3>
+            <p>Pipelines that join monitoring data to river networks and basins (NHDPlus, HydroATLAS, HydroRIVERS, HydroLAKES) at national and global scale.</p>
+          </article>
+          <article class="theme">
+            <h3>Simulation software &amp; HPC</h3>
+            <p>Fortran and Python development inside large coupled models, model coupling interfaces, and production runs on NERSC Perlmutter and OLCF Frontier.</p>
+          </article>
+          <article class="theme">
+            <h3>Validation &amp; reproducibility</h3>
+            <p>Mass and heat budget checks, bit-for-bit regression tests, held-out evaluation, automated tests and versioned data and code releases.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <!-- Card order: --r is the Research view, --i is the Industry view. -->
+    <section class="section section-tint" id="projects" style="--r:2; --i:2" aria-labelledby="projects-title">
+      <div class="wrap">
+        <p class="kicker">Selected projects</p>
+        <h2 id="projects-title"><span class="r-only">Research I lead and contribute to</span><span class="i-only">Things I have built, tested and shipped</span></h2>
+
+        <div class="projects">
+
+          <!-- P01 RIVER-AI -->
+          <article class="project wide" style="--r:1; --i:6">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-dev">In development</span>
+                <span class="where">DOE RIVER-AI · 2026–</span>
+              </div>
+              <h3>RIVER-AI: groundwater and AI reservoir policies in a river-network model</h3>
+              <p class="r-only">In the DOE RIVER-AI project I develop and evaluate the interfaces that connect a machine-learning groundwater emulator and reservoir-operation policies — including LLM-based policies — to the MOSART-Urban river-network model. The first application is the upper Delaware River Basin, with the goal of understanding managed flow variability and resilience.</p>
+              <p class="i-only">Implemented and tested coupling interfaces between a Python river-network model, an ML groundwater emulator and LLM-driven reservoir policies: spatial and calendar alignment, alternative exchange schemes, water-budget diagnostics, bit-for-bit regression checks and comparison against observed streamflow.</p>
+              <ul class="tags">
+                <li>Python</li><li>MOSART-Urban</li><li>Groundwater emulator</li><li>LLM reservoir policy</li><li>Water-budget checks</li><li>Delaware River Basin</li>
+              </ul>
+              <details>
+                <summary>My role &amp; scope</summary>
+                <p>I own the river-model side: the interfaces, integration and evaluation. The ParFlow simulations, the groundwater emulator and the reservoir policies are developed by partner teams. This is active, unpublished work, so no results are shown here.</p>
+              </details>
+            </div>
+            <figure class="project-fig schematic">
+              <svg viewBox="0 0 600 300" role="img" aria-labelledby="sx1-t sx1-d">
+                <title id="sx1-t">RIVER-AI coupling schematic</title>
+                <desc id="sx1-d">A groundwater emulator and reservoir policies (rule-based or LLM) exchange water with the MOSART-Urban river network, which produces streamflow compared with gauges. The exchange interfaces are highlighted.</desc>
+                <defs>
+                  <marker id="sx1-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="sx-head" d="M0 0 L10 5 L0 10 z" /></marker>
+                  <marker id="sx1-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="sx-head-m" d="M0 0 L10 5 L0 10 z" /></marker>
+                </defs>
+                <rect class="sx-box" x="10" y="40" width="160" height="92" rx="12" />
+                <text class="sx-title" x="90" y="74" text-anchor="middle">Groundwater</text>
+                <text class="sx-title" x="90" y="96" text-anchor="middle">emulator</text>
+                <text class="sx-sub" x="90" y="119" text-anchor="middle">trained on ParFlow</text>
+
+                <rect class="sx-box sx-core" x="220" y="40" width="160" height="92" rx="12" />
+                <text class="sx-title" x="300" y="76" text-anchor="middle">MOSART-Urban</text>
+                <text class="sx-sub" x="300" y="98" text-anchor="middle">river network</text>
+                <text class="sx-sub" x="300" y="118" text-anchor="middle">routing</text>
+
+                <rect class="sx-box" x="430" y="40" width="160" height="92" rx="12" />
+                <text class="sx-title" x="510" y="74" text-anchor="middle">Reservoir</text>
+                <text class="sx-title" x="510" y="96" text-anchor="middle">policies</text>
+                <text class="sx-sub" x="510" y="119" text-anchor="middle">rule-based · LLM</text>
+
+                <line class="sx-arrow" x1="176" y1="86" x2="214" y2="86" marker-start="url(#sx1-a)" marker-end="url(#sx1-a)" />
+                <line class="sx-arrow" x1="386" y1="86" x2="424" y2="86" marker-start="url(#sx1-a)" marker-end="url(#sx1-a)" />
+                <text class="sx-label" x="195" y="162" text-anchor="middle">river ↔ aquifer</text>
+                <text class="sx-label" x="195" y="181" text-anchor="middle">exchange</text>
+                <text class="sx-label" x="405" y="162" text-anchor="middle">inflow ↔</text>
+                <text class="sx-label" x="405" y="181" text-anchor="middle">release</text>
+
+                <line class="sx-arrow sx-plain" x1="300" y1="136" x2="300" y2="206" marker-end="url(#sx1-m)" />
+                <rect class="sx-box" x="220" y="210" width="160" height="74" rx="12" />
+                <text class="sx-title" x="300" y="242" text-anchor="middle">Streamflow</text>
+                <text class="sx-sub" x="300" y="265" text-anchor="middle">vs. USGS gauges</text>
+              </svg>
+              <figcaption>Concept sketch. Highlighted arrows are the interfaces I build and test.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P02 MOSART-Lake -->
+          <article class="project wide" style="--r:2; --i:5">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-dev">In development</span>
+                <span class="where">E3SM · manuscript in preparation</span>
+              </div>
+              <h3>MOSART-Lake: lakes in a global river model</h3>
+              <p class="r-only">I develop lake water balance, outflow, temperature, and snow and ice representations in MOSART-Lake, the river component of the DOE Energy Exascale Earth System Model (E3SM). The work combines process-based simulation with an offline LSTM emulator for lake ice, and multi-decade evaluation against satellite lake-area and surface-temperature products.</p>
+              <p class="i-only">Built an LSTM emulator and NetCDF deployment workflow for 49,708 lake objects: ten dynamic forcings and five static inputs, a locked temporal test period, physically constrained outputs, integrity checks and numerical parity between the training stack and the deployed inference code.</p>
+              <ul class="tags">
+                <li>Fortran</li><li>E3SM / MOSART</li><li>LSTM emulator</li><li>NetCDF</li><li>Perlmutter HPC</li><li>Water &amp; heat conservation</li>
+              </ul>
+              <details>
+                <summary>My role &amp; scope</summary>
+                <p>Model development, the snow and ice emulator, simulation diagnostics and the manuscript draft. The model is under active development; performance numbers will be shared once the production version is published.</p>
+              </details>
+            </div>
+            <figure class="project-fig schematic">
+              <svg viewBox="0 0 600 300" role="img" aria-labelledby="sx2-t sx2-d">
+                <title id="sx2-t">MOSART-Lake process schematic</title>
+                <desc id="sx2-d">A lake on a river: river inflow, lake storage and temperature, outflow downstream, heat exchange with the atmosphere, and a snow and ice cover predicted by an LSTM emulator.</desc>
+                <defs>
+                  <marker id="sx2-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="sx-head" d="M0 0 L10 5 L0 10 z" /></marker>
+                  <marker id="sx2-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="sx-head-m" d="M0 0 L10 5 L0 10 z" /></marker>
+                </defs>
+                <path class="sx-land" d="M0 138 L150 138 C 215 268, 385 268, 450 138 L600 138 L600 300 L0 300 Z" />
+                <path class="sx-water" d="M150 138 C 215 268, 385 268, 450 138 Z" />
+                <rect class="sx-ice" x="190" y="130" width="220" height="10" rx="4" />
+                <text class="sx-sub" x="300" y="190" text-anchor="middle">storage · temperature</text>
+
+                <line class="sx-arrow sx-plain" x1="20" y1="124" x2="168" y2="124" marker-end="url(#sx2-m)" />
+                <text class="sx-label sx-muted" x="20" y="110">inflow</text>
+                <line class="sx-arrow sx-plain" x1="432" y1="124" x2="580" y2="124" marker-end="url(#sx2-m)" />
+                <text class="sx-label sx-muted" x="580" y="110" text-anchor="end">outflow</text>
+
+                <line class="sx-arrow sx-plain" x1="200" y1="40" x2="200" y2="114" marker-end="url(#sx2-m)" />
+                <line class="sx-arrow sx-plain" x1="262" y1="114" x2="262" y2="40" marker-end="url(#sx2-m)" />
+                <text class="sx-label sx-muted" x="192" y="30" text-anchor="end">radiation</text>
+                <text class="sx-label sx-muted" x="270" y="30">heat · evaporation</text>
+
+                <rect class="sx-box sx-core" x="420" y="14" width="168" height="62" rx="10" />
+                <text class="sx-title" x="504" y="41" text-anchor="middle">LSTM emulator</text>
+                <text class="sx-sub" x="504" y="61" text-anchor="middle">snow &amp; ice cover</text>
+                <path class="sx-arrow sx-dash" d="M470 80 C 450 100, 420 112, 398 126" marker-end="url(#sx2-a)" />
+              </svg>
+              <figcaption>Concept sketch of the processes represented for each lake.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P05 + P06 Doctoral DOC work -->
+          <article class="project" style="--r:3; --i:8">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-pub">Published</span>
+                <span class="where">Ph.D. · ESSD 2025 · JAMES 2026</span>
+              </div>
+              <h3>Land-to-river dissolved organic carbon</h3>
+              <p class="r-only">My doctoral work built a land-to-river carbon chain. First, observation-constrained maps of the DOC transformation rate for more than 2.6 million U.S. catchments (ESSD 2025). These parameterize ELM-MOSART-DOC, a riverine DOC model in E3SM that represents soil leaching, river transport and transformation, and reservoir regulation (JAMES 2026). Against long-term monitoring the model reached KGE 0.58 at large-river and 0.76 at local stations, and it estimates a 7.5% reservoir-associated reduction in Mississippi River DOC export.</p>
+              <p class="i-only">Built an interpretable XGBoost workflow that combines river chemistry, soil-carbon and watershed data to predict a carbon parameter for more than 2.6 million catchments, then implemented and validated a coupled land–river carbon model in Fortran (E3SM) against national river monitoring records. Both data and code are public.</p>
+              <ul class="tags">
+                <li>XGBoost</li><li>Sensitivity analysis</li><li>Fortran</li><li>E3SM / ELM</li><li>NHDPlus</li><li>2.6M catchments</li>
+              </ul>
+              <details>
+                <summary>My role &amp; scope</summary>
+                <p>First author of both papers; led model development, mapping and evaluation. The model code is built on E3SM v2.1.0, whose wider codebase belongs to the E3SM community.</p>
+              </details>
+              <ul class="proj-links">
+                <li><a href="https://doi.org/10.5194/essd-17-2713-2025" target="_blank" rel="noopener">ESSD paper</a></li>
+                <li><a href="https://doi.org/10.1029/2025MS005307" target="_blank" rel="noopener">JAMES paper</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.14563816" target="_blank" rel="noopener">Data</a></li>
+                <li><a href="https://github.com/Ceyxleo/DOC-Param-Map" target="_blank" rel="noopener">Mapping code</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.17730412" target="_blank" rel="noopener">Model code</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- P07 Global DOC -->
+          <article class="project wide" style="--r:4; --i:3">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-sub">Submitted</span>
+                <span class="where">Scientific Data · open data &amp; code</span>
+              </div>
+              <h3>A global map of DOC transformation rates</h3>
+              <p class="r-only">I extended the U.S. framework to 1,034,083 HydroBASINS catchments using globally harmonized HydroATLAS predictors, with representativeness analysis of where the training data apply and external evaluation against GLORICH river chemistry outside the U.S.</p>
+              <p class="i-only">A reproducible regional-to-global prediction pipeline: preprocessing, feature screening, XGBoost training, domain-representativeness diagnostics, external validation and GIS-ready outputs for 1.03 million basins worldwide.</p>
+              <ul class="tags">
+                <li>XGBoost · SHAP</li><li>HydroATLAS</li><li>Representativeness analysis</li><li>1.03M basins</li>
+              </ul>
+              <details>
+                <summary>My role &amp; scope</summary>
+                <p>First author; designed and ran the full workflow. The manuscript is submitted to Scientific Data; the dataset and code are already public.</p>
+              </details>
+              <ul class="proj-links">
+                <li><a href="https://doi.org/10.5281/zenodo.20436899" target="_blank" rel="noopener">Data</a></li>
+                <li><a href="https://github.com/Ceyxleo/Global_pr_map" target="_blank" rel="noopener">Code</a></li>
+              </ul>
+            </div>
+            <figure class="project-fig">
+              <img src="assets/global-doc-map.jpg" width="1600" height="821" loading="lazy" alt="World map of the DOC transformation rate Pr, shaded light to dark green, with a histogram inset." />
+              <figcaption>Global DOC transformation rate (P<sub>r</sub>) from the public dataset.</figcaption>
+            </figure>
+          </article>
+
+          <!-- P08 D50 -->
+          <article class="project" style="--r:5; --i:4">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-open">Open data</span>
+                <span class="where">Manuscript in preparation · ESSD</span>
+              </div>
+              <h3>Global riverbed grain size for 8.5 million reaches</h3>
+              <p class="r-only">A global map of riverbed median grain size (D<sub>50</sub>) for about 8.5 million HydroRIVERS reaches. We harmonized sieve and literature observations, matched them to the river network, trained XGBoost models and mapped where the predictions are applicable.</p>
+              <p class="i-only">Global geospatial ML for 8.48 million river reaches: matching field observations to the river network, data-quality controls, feature analysis and area-of-applicability diagnostics, released as an open dataset.</p>
+              <ul class="tags">
+                <li>XGBoost</li><li>HydroRIVERS</li><li>Area of applicability</li><li>8.5M reaches</li>
+              </ul>
+              <details>
+                <summary>My role &amp; scope</summary>
+                <p>Equal-contribution author with Kseniia A. Gerasimova: data harmonization, model development and improvement, and figures. The public dataset is an earlier version than the manuscript in revision.</p>
+              </details>
+              <ul class="proj-links">
+                <li><a href="https://doi.org/10.5281/zenodo.20106874" target="_blank" rel="noopener">Data</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- P09 GIG -->
+          <article class="project wide-r" style="--r:6; --i:9">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-open">Open code &amp; data</span>
+                <span class="where">Collaborative manuscript</span>
+              </div>
+              <h3>A riverbed particle-size distribution with physical meaning</h3>
+              <p class="r-only">A Generalized Inverse Gaussian (GIG) representation of riverbed particle-size distributions whose parameters are hydraulically interpretable, fitted to 19,765 U.S. samples from 2,114 stations and checked on independent Lower Rhine samples.</p>
+              <p class="i-only">Packaged a reproducible Python workflow that fits and compares 25 candidate distributions with multi-start optimization, BIC/AIC model selection and percentile inversion, with 47 automated tests and scripts that regenerate every table and figure.</p>
+              <ul class="tags">
+                <li>Python · SciPy</li><li>Distribution fitting</li><li>Automated tests</li><li>19,765 samples</li>
+              </ul>
+              <details>
+                <summary>My role &amp; scope</summary>
+                <p>Second author on Kseniia A. Gerasimova's study: distribution fitting, model comparison, analysis reproduction and the software and data release.</p>
+              </details>
+              <ul class="proj-links">
+                <li><a href="https://github.com/Ceyxleo/riverbed-psd-gig" target="_blank" rel="noopener">Code</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.22339164" target="_blank" rel="noopener">Software DOI</a></li>
+                <li><a href="https://doi.org/10.5281/zenodo.22339349" target="_blank" rel="noopener">Data</a></li>
+              </ul>
+            </div>
+            <figure class="project-fig">
+              <img src="assets/gig-psd-fits.png" width="1400" height="926" loading="lazy" alt="Six panels comparing GIG, lognormal and Weibull fits to coarse-skewed, near-symmetric and fine-skewed riverbed grain-size samples." />
+              <figcaption>GIG, lognormal and Weibull fits for three example samples (public repository).</figcaption>
+            </figure>
+          </article>
+
+          <!-- P03 Lake parameters -->
+          <article class="project" style="--r:7; --i:2">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-open">Open software</span>
+                <span class="where">Used in MOSART-Lake</span>
+              </div>
+              <h3>Global lake parameters for river models</h3>
+              <p class="r-only">A multiresolution workflow linking the HydroLAKES inventory and GLOBathy bathymetry to MOSART river grids. It classifies main-channel and tributary lakes, resolves their placement using drainage area and shorelines, merges lake objects, fits area–depth–volume curves and writes NetCDF parameters.</p>
+              <p class="i-only">Reusable Python/NetCDF pipeline that processes about 1.42 million lake records: spatial matching, parallel curve fitting, configurable grid resolution and automated QA/QC reports on completeness and placement.</p>
+              <ul class="tags">
+                <li>Python</li><li>Shapely</li><li>NetCDF</li><li>Parallel processing</li><li>1.42M lakes</li>
+              </ul>
+              <ul class="proj-links">
+                <li><a href="https://github.com/Ceyxleo/mosart-lake-params" target="_blank" rel="noopener">Code</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- P13 Beach water quality -->
+          <article class="project" style="--r:8; --i:1">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-pub">Published</span>
+                <span class="where">Water Research 2022</span>
+              </div>
+              <h3>Interpretable ML for beach water quality</h3>
+              <p class="r-only">Compared five tree-based ensembles for predicting <i>E. coli</i>-based beach water quality at three Lake Erie beaches, and used SHAP to interpret environmental drivers and their interactions. My most-cited paper.</p>
+              <p class="i-only">Benchmarked classification trees, random forest, CatBoost, XGBoost and LightGBM, and used global and local SHAP explanations to connect microbial water-quality predictions to the environmental conditions behind them. My most-cited paper (289 citations on Google Scholar).</p>
+              <ul class="tags">
+                <li>XGBoost</li><li>LightGBM</li><li>CatBoost</li><li>SHAP</li><li>Model comparison</li>
+              </ul>
+              <ul class="proj-links">
+                <li><a href="https://doi.org/10.1016/j.watres.2022.118078" target="_blank" rel="noopener">Paper</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- P16 AI workflows -->
+          <article class="project" style="--r:9; --i:7">
+            <div class="project-body">
+              <div class="project-head">
+                <span class="status status-open">Ongoing</span>
+                <span class="where">Argonne · Genesis Mission Hackathon 2026</span>
+              </div>
+              <h3>AI-assisted research workflows</h3>
+              <p>Took part in the DOE Genesis Mission Hackathon at Argonne National Laboratory (October 2026) for the RIVER-AI team. I use AI coding agents with explicit task scope, human review and numerical checks for model diagnostics, documentation and HPC job coordination.</p>
+              <p class="i-only">Side project: <a href="https://ceyxleo.github.io/ai-frontier-watch/" target="_blank" rel="noopener">ai-frontier-watch</a>, a public pipeline that runs weekly on GitHub Actions, calls an LLM API with web search and structured outputs, and publishes a bilingual AI research digest to GitHub Pages.</p>
+              <ul class="tags">
+                <li>Claude Code</li><li>LLM APIs</li><li>GitHub Actions</li><li>Reproducible workflows</li>
+              </ul>
+              <ul class="proj-links">
+                <li><a href="https://github.com/Ceyxleo/ai-frontier-watch" target="_blank" rel="noopener">ai-frontier-watch</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Next directions (research view only) -->
+          <article class="project project-next r-only" style="--r:10; --i:99">
+            <div class="project-body">
+              <div class="project-head"><span class="status status-plan">Next</span></div>
+              <h3>Where my research is heading</h3>
+              <ul class="next-list">
+                <li><strong>Riverine nitrate.</strong> A mass-conserving nitrate model in MOSART for large-scale water-quality hazard assessment.</li>
+                <li><strong>Drought propagation.</strong> How meteorological drought moves into soil moisture, streamflow and vegetation across 528 CAMELS catchments, and whether ecosystems hedge against it.</li>
+                <li><strong>AI for water management.</strong> Coupling learned emulators and AI decision policies with physically based river models.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE & EDUCATION ============ -->
+    <section class="section" id="experience" style="--r:3; --i:4" aria-labelledby="experience-title">
+      <div class="wrap">
+        <p class="kicker">Experience &amp; education</p>
+        <h2 id="experience-title">Where I have worked and trained</h2>
+
+        <ol class="timeline">
+          <li>
+            <p class="when">Feb 2026 – present</p>
+            <div>
+              <h3>Postdoctoral Researcher, Lehigh University</h3>
+              <p class="org">Department of Civil and Environmental Engineering and Center for Catastrophe Modeling and Resilience · Bethlehem, PA · Supervisor: Prof. Hong-Yi Li</p>
+              <ul>
+                <li>Groundwater-emulator and reservoir-policy coupling with MOSART-Urban for the DOE RIVER-AI project.</li>
+                <li>MOSART-Lake development: lake hydrology, temperature, and snow and ice with an LSTM emulator.</li>
+                <li>Global data products for DOC transformation rates and riverbed grain size; support for PI-led proposals.</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p class="when">Jun 2025 – Dec 2025</p>
+            <div>
+              <h3>Research Intern, Oak Ridge National Laboratory</h3>
+              <p class="org">Earth System Modeling Group · Mentor: Dr. Xiaojuan Yang</p>
+              <ul>
+                <li>Developed a 4-km CONUS aboveground-biomass mapping workflow that integrates forest inventory, remote sensing, climate, land-cover and soil data with machine learning.</li>
+                <li>Ran high-resolution ELM simulations on the Frontier supercomputer for an ORNL-led assessment of southeastern U.S. forest carbon under climate and land-management scenarios.</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <p class="when">Sep 2021 – Dec 2025</p>
+            <div>
+              <h3>Ph.D., Civil Engineering, University of Houston</h3>
+              <p class="org">Department of Civil and Environmental Engineering · Advisor: Prof. Hong-Yi Li · GPA 4.0/4.0</p>
+              <p>Dissertation: <em>Bridging Artificial Intelligence and Earth System Modeling for Land-to-River Carbon Fluxes</em>. Graduate Research Assistant throughout.</p>
+            </div>
+          </li>
+          <li>
+            <p class="when">Sep 2019 – Dec 2020</p>
+            <div>
+              <h3>M.S., Environmental and Water Resources Engineering, University at Buffalo</h3>
+              <p class="org">Research Assistant, Feb – Dec 2020</p>
+              <p>Interpretable machine learning for beach water quality; satellite-constrained emission estimates.</p>
+            </div>
+          </li>
+          <li>
+            <p class="when">Sep 2015 – Jul 2019</p>
+            <div>
+              <h3>B.S., Groundwater Science and Engineering, Chang'an University</h3>
+              <p class="org">Xi'an, China</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="section section-tint" id="publications" style="--r:4; --i:6" aria-labelledby="pubs-title">
+      <div class="wrap">
+        <p class="kicker">Publications</p>
+        <h2 id="pubs-title">Papers, manuscripts and talks</h2>
+        <p class="lead-small">Full and current list on <a href="https://scholar.google.com/citations?user=C4_X7jQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>. <span class="fa">First author</span> marks papers I led.</p>
+
+        <h3 class="pub-group">Peer-reviewed journal articles</h3>
+        <ol class="pubs">
+          <li>
+            <p><b>Li, L.</b>, Li, H.-Y., Abeshu, G., Yang, X., Tang, J., Tan, Z., Liao, C., Feng, D., Thornton, P., &amp; Leung, L. R. (2026). ELM-MOSART-DOC: A large-scale riverine dissolved organic carbon model and its application over the United States. <i>Journal of Advances in Modeling Earth Systems</i>, 18(2), e2025MS005307.</p>
+            <p class="pub-meta"><span class="fa">First author</span> <a href="https://doi.org/10.1029/2025MS005307" target="_blank" rel="noopener">doi:10.1029/2025MS005307</a></p>
+          </li>
+          <li>
+            <p><b>Li, L.</b>, Li, H.-Y., Abeshu, G., Tang, J., Leung, L. R., Liao, C., Tan, Z., Tian, H., Thornton, P., &amp; Yang, X. (2025). Transformation rate maps of dissolved organic carbon in the contiguous US. <i>Earth System Science Data</i>, 17, 2713–2733.</p>
+            <p class="pub-meta"><span class="fa">First author</span> <a href="https://doi.org/10.5194/essd-17-2713-2025" target="_blank" rel="noopener">doi:10.5194/essd-17-2713-2025</a></p>
+          </li>
+          <li>
+            <p><b>Li, L.</b>, Qiao, J., Yu, G., Wang, L., Li, H.-Y., Liao, C., &amp; Zhu, Z. (2022). Interpretable tree-based ensemble model for predicting beach water quality. <i>Water Research</i>, 211, 118078.</p>
+            <p class="pub-meta"><span class="fa">First author</span> <a href="https://doi.org/10.1016/j.watres.2022.118078" target="_blank" rel="noopener">doi:10.1016/j.watres.2022.118078</a></p>
+          </li>
+          <li>
+            <p>Sun, K., <b>Li, L.</b>, Jagini, S., &amp; Li, D. (2021). A satellite-data-driven framework to rapidly quantify air-basin-scale NO<sub>x</sub> emissions and its application to the Po Valley during the COVID-19 pandemic. <i>Atmospheric Chemistry and Physics</i>, 21, 13311–13332.</p>
+            <p class="pub-meta"><a href="https://doi.org/10.5194/acp-21-13311-2021" target="_blank" rel="noopener">doi:10.5194/acp-21-13311-2021</a></p>
+          </li>
+          <li>
+            <p>Wang, W., Lv, J., Xu, D., <b>Li, L.</b>, &amp; Jia, Y. (2017). Migration of induced-infiltration stream water into nearby aquifer due to a transverse horizontal well in loess areas. <i>Environmental Earth Sciences</i>, 76, 572.</p>
+            <p class="pub-meta"><a href="https://doi.org/10.1007/s12665-017-6904-2" target="_blank" rel="noopener">doi:10.1007/s12665-017-6904-2</a></p>
+          </li>
+        </ol>
+
+        <h3 class="pub-group">Submitted and in preparation</h3>
+        <ol class="pubs">
+          <li>
+            <p><b>Li, L.</b>, Li, H.-Y., Yang, X., Jeffery, N., Tang, J., &amp; Leung, L. R. A global map of dissolved organic carbon transformation rates. Submitted to <i>Scientific Data</i>.</p>
+            <p class="pub-meta"><span class="fa">First author</span></p>
+          </li>
+          <li>
+            <p>Gerasimova, K. A.*, <b>Li, L.</b>*, Li, H.-Y., et al. A global riverbed median grain-size (D<sub>50</sub>) map for 8.5 million reaches. In preparation for <i>Earth System Science Data</i>. *Equal contribution.</p>
+          </li>
+          <li>
+            <p>Gerasimova, K. A., <b>Li, L.</b>, Li, H.-Y., Zhu, Z., Abeshu, G., Deng, Z., Papanicolaou, A. N., &amp; Leung, L. R. A riverbed sediment distribution function with hydraulically interpretable parameters improves water-resources estimates. In preparation.</p>
+          </li>
+        </ol>
+
+        <h3 class="pub-group">Conference abstracts</h3>
+        <ol class="pubs pubs-compact">
+          <li><p>Li, H.-Y., <b>Li, L.</b>, Abeshu, G. W., et al. (2025). Modeling dissolved organic carbon in managed US rivers. <i>AGU Fall Meeting</i>, H13T-1342.</p></li>
+          <li><p><b>Li, L.</b>, Li, H.-Y., Abeshu, G. W., Yang, X., Tang, J., Thornton, P. E., &amp; Leung, L. R. (2023). MOSART-DOC: A new large-scale riverine dissolved organic carbon model and its application over the United States. <i>AGU Fall Meeting</i>.</p></li>
+          <li><p>Gerasimova, K., Li, H., Abeshu, G. W., &amp; <b>Li, L.</b> (2023). Mapping river sediment particle size distribution function over the contiguous US. <i>AGU Fall Meeting</i>.</p></li>
+          <li><p><b>Li, L.</b>, Li, H.-Y., Abeshu, G. W., Tan, Z., Liao, C., Yang, X., &amp; Leung, L. R. (2022). Deriving a solubility map of soil organic carbon over the contiguous US. <i>AGU Fall Meeting</i>, B54A-03.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ DATA & CODE ============ -->
+    <section class="section" id="data-code" style="--r:5; --i:5" aria-labelledby="data-title">
+      <div class="wrap">
+        <p class="kicker">Open data &amp; code</p>
+        <h2 id="data-title">Releases others can reuse</h2>
+
+        <div class="releases">
+          <div>
+            <h3 class="pub-group">Datasets and software with DOIs</h3>
+            <ul class="release-list">
+              <li><span class="rtype">Data</span><a href="https://doi.org/10.5281/zenodo.14563816" target="_blank" rel="noopener">Transformation rate maps of dissolved organic carbon in the contiguous U.S.</a><span class="rmeta">Zenodo · 2024</span></li>
+              <li><span class="rtype">Code</span><a href="https://doi.org/10.5281/zenodo.15598147" target="_blank" rel="noopener">DOC-Param-Map v1.0</a><span class="rmeta">Zenodo · 2025</span></li>
+              <li><span class="rtype">Code</span><a href="https://doi.org/10.5281/zenodo.17730412" target="_blank" rel="noopener">ELM-MOSART-DOC v1.0.0-alpha</a><span class="rmeta">Zenodo · 2025</span></li>
+              <li><span class="rtype">Data</span><a href="https://doi.org/10.5281/zenodo.20436899" target="_blank" rel="noopener">A global basin-scale dataset of DOC transformation rates</a><span class="rmeta">Zenodo · 2026</span></li>
+              <li><span class="rtype">Code</span><a href="https://doi.org/10.5281/zenodo.20754967" target="_blank" rel="noopener">Global_pr_map v0.1.0</a><span class="rmeta">Zenodo · 2026</span></li>
+              <li><span class="rtype">Data</span><a href="https://doi.org/10.5281/zenodo.20106874" target="_blank" rel="noopener">Global riverbed median grain-size (D<sub>50</sub>) for 8.5 million HydroRIVERS reaches</a><span class="rmeta">Zenodo · 2026</span></li>
+              <li><span class="rtype">Code</span><a href="https://doi.org/10.5281/zenodo.22339164" target="_blank" rel="noopener">riverbed-psd-gig v1.0.0</a><span class="rmeta">Zenodo · 2026</span></li>
+              <li><span class="rtype">Data</span><a href="https://doi.org/10.5281/zenodo.22339349" target="_blank" rel="noopener">A universal riverbed sediment distribution function — data</a><span class="rmeta">Zenodo · 2026</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="pub-group">GitHub repositories</h3>
+            <ul class="repo-list">
+              <li><a href="https://github.com/Ceyxleo/DOC-Param-Map" target="_blank" rel="noopener">DOC-Param-Map</a><p>Feature selection, training and validation for the CONUS DOC maps.</p></li>
+              <li><a href="https://github.com/Ceyxleo/Global_pr_map" target="_blank" rel="noopener">Global_pr_map</a><p>Global DOC transformation-rate workflow.</p></li>
+              <li><a href="https://github.com/Ceyxleo/mosart-lake-params" target="_blank" rel="noopener">mosart-lake-params</a><p>MOSART lake parameters from HydroLAKES and GLOBathy.</p></li>
+              <li><a href="https://github.com/Ceyxleo/riverbed-psd-gig" target="_blank" rel="noopener">riverbed-psd-gig</a><p>Fitting and evaluation code for the GIG particle-size distribution.</p></li>
+              <li><a href="https://github.com/Ceyxleo/ai-frontier-watch" target="_blank" rel="noopener">ai-frontier-watch</a><p>Automated weekly AI research digest on GitHub Actions and Pages.</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section-tint" id="skills" style="--r:6; --i:3" aria-labelledby="skills-title">
+      <div class="wrap">
+        <p class="kicker">Skills</p>
+        <h2 id="skills-title">Tools I use in real projects</h2>
+        <div class="skills">
+          <div class="skill">
+            <h3>Earth system modeling</h3>
+            <p>E3SM, ELM, MOSART, MOSART-Lake, MOSART-Urban; river carbon, reservoirs, lake hydrology and thermal processes; coupling interfaces.</p>
+          </div>
+          <div class="skill">
+            <h3>Programming &amp; HPC</h3>
+            <p>Python, Fortran, shell, Git, NetCDF; Linux and Slurm on NERSC Perlmutter and OLCF Frontier; pytest-based regression and parity tests.</p>
+          </div>
+          <div class="skill">
+            <h3>Machine learning</h3>
+            <p>XGBoost, LightGBM, CatBoost, random forests, SHAP, Optuna, sensitivity analysis; LSTM emulators with temporal validation and constrained outputs.</p>
+          </div>
+          <div class="skill">
+            <h3>Geospatial data</h3>
+            <p>NHDPlus, HydroATLAS, HydroBASINS, HydroRIVERS, HydroLAKES, GLOBathy, soil and climate products; spatial matching, catchment aggregation, multiresolution grids.</p>
+          </div>
+          <div class="skill">
+            <h3>Evaluation</h3>
+            <p>Mass and heat budget closure, conservation diagnostics, held-out and spatial validation, KGE/NSE, distribution fitting with BIC/AIC, area-of-applicability analysis.</p>
+          </div>
+          <div class="skill">
+            <h3>AI-assisted development</h3>
+            <p>AI coding agents and LLM APIs for code inspection, documentation, analysis and HPC job coordination, always with human review and numerical checks.</p>
+          </div>
+        </div>
+        <p class="training"><strong>Training (course completion):</strong> Micro-credential in High-Performance Computing (2025) · Scientific Computing in C++ (2025) · GPGPU Programming (2025) · Parallel Computing with OpenMP (2024) · Data Science and Scientific Computing using Julia (2024) · Introduction to Cluster Computing (2024).</p>
+      </div>
+    </section>
+
+    <!-- ============ SERVICE & HONORS ============ -->
+    <section class="section" id="service" style="--r:7; --i:7" aria-labelledby="service-title">
+      <div class="wrap two-col">
+        <div>
+          <p class="kicker">Service</p>
+          <h2 id="service-title">Peer review</h2>
+          <p>Reviewer for <i>Water Resources Research</i>, <i>Journal of Water Resources Planning and Management</i>, <i>Environmental Modelling &amp; Software</i>, <i>Journal of Hydrologic Engineering</i> and <i>Journal of Hydroinformatics</i>.</p>
+        </div>
+        <div>
+          <p class="kicker">Honors</p>
+          <h2>Awards</h2>
+          <p>Jimmie A. Schindewolf Academic Scholarship, University of Houston, 2024.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" style="--r:8; --i:8" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="kicker">Contact</p>
+        <h2 id="contact-title"><span class="r-only">Interested in my research or in working together? Get in touch.</span><span class="i-only">Working on environmental data, ML or simulation? Let's talk.</span></h2>
+        <p class="contact-line"><a class="email" href="mailto:lingboli6@gmail.com">lingboli6@gmail.com</a></p>
+        <ul class="links">
+          <li><a class="btn" href="https://scholar.google.com/citations?user=C4_X7jQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a class="btn" href="https://github.com/Ceyxleo" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a class="btn" href="https://www.linkedin.com/in/lingbo-li-ph-d-023a43292/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a class="btn" href="https://orcid.org/0009-0007-9691-5369" target="_blank" rel="noopener">ORCID</a></li>
+        </ul>
+        <p class="share-hint">Sharing this page? Links open in the view you choose: <a href="?view=research">research view</a> · <a href="?view=industry">industry view</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Lingbo Li · Bethlehem, Pennsylvania</span>
+      <span>Last updated November 2026 · <a href="#top">Back to top ↑</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
