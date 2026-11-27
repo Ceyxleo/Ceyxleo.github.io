@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RIVER-AI · DOE Genesis Mission — Lingbo Li</title>
+  <meta name="description" content="RIVER-AI, a DOE Genesis Mission project: coupling a machine-learning groundwater emulator and LLM reservoir-operation policies with a physics-based river-network model, verified with water-balance checks. Lingbo Li's role, methods and progress." />
+  <meta name="author" content="Lingbo Li" />
+  <link rel="canonical" href="https://ceyxleo.github.io/river-ai.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="RIVER-AI · DOE Genesis Mission — Lingbo Li" />
+  <meta property="og:description" content="AI inside a physics-based river model: a groundwater emulator and LLM reservoir policies, coupled and verified with water-balance checks." />
+  <meta property="og:url" content="https://ceyxleo.github.io/river-ai.html" />
+  <meta property="og:image" content="https://ceyxleo.github.io/assets/drb-network.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1e4d3a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./">Lingbo Li</a>
+      <nav class="nav" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="projects.html" aria-current="true">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <p class="kicker">Ongoing research · DOE Genesis Mission</p>
+        <h1>RIVER-AI</h1>
+        <p class="lead">Reservoir–Groundwater Interactions for River Flow Variability, Energy, and Resilience with AI</p>
+        <dl class="facts">
+          <div><dt>Funding</dt><dd>U.S. Department of Energy Genesis Mission award, 2026 — one of 278 projects selected from more than 5,000 proposals</dd></div>
+          <div><dt>Team</dt><dd>Lehigh University (PI: Prof. Hong-Yi Li) with PNNL, ORNL, UT Austin and City College of New York</dd></div>
+          <div><dt>My role</dt><dd>Postdoctoral researcher: river-model coupling, verification and evaluation</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="q-title">
+      <div class="wrap two-col wide-left">
+        <div>
+          <h2 id="q-title">The question</h2>
+          <p>In managed basins, river flow depends on more than rain. Reservoir operators decide every day how much water to release, and groundwater either feeds a river or draws water from it, depending on the water table. Large-scale river models usually represent both in simplified ways.</p>
+          <p>RIVER-AI is building a hybrid AI–physics platform that represents these interactions, to improve predictions of water availability and risk for communities and energy systems. The first application is the upper Delaware River Basin.</p>
+          <p><a href="https://catmodeling.lehigh.edu/news/2026-cat-center-faculty-awarded-us-department-energy-genesis-mission-grant" target="_blank" rel="noopener">Lehigh's announcement of the award ↗</a></p>
+        </div>
+        <figure class="fig">
+          <img src="assets/drb-network.jpg" width="688" height="1100" loading="lazy" alt="Map of the upper Delaware River Basin river network with four USGS gauges marked: Montague, Flat Brook, Lehigh and Trenton." />
+          <figcaption><span class="figno">Map</span><span>The upper Delaware River Basin network and the four USGS gauges used to evaluate the coupled model. Study area only; no model results are shown.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="build-title">
+      <div class="wrap">
+        <h2 id="build-title">What I build</h2>
+        <div class="two-col wide-left">
+          <ol class="steps">
+            <li>
+              <h3>A groundwater emulator inside the river model</h3>
+              <p>A partner team trained a PyTorch neural-network emulator of 3D ParFlow subsurface flow. I wrote the river–aquifer exchange law that connects it to MOSART-Urban as a GPU module with storage limits, ran the coupled system on NERSC Perlmutter GPU nodes, and built diagnostics that compare the emulator with ParFlow by time, elevation, and channel versus non-channel cells.</p>
+            </li>
+            <li>
+              <h3>LLM reservoir decisions at every time step</h3>
+              <p>Reservoir-operation policies from a partner team, including LLM-based ones, are queried at each daily step, in river-network order, through multi-year simulations. I built that interface and an audit that checks every release decision against the reservoir water balance.</p>
+            </li>
+            <li>
+              <h3>Verification before results</h3>
+              <p>Every change is tested before it informs the science: water-budget closure for each exchange scheme, bit-for-bit regression tests against earlier runs, and comparison of simulated streamflow with USGS gauges. Results will be shared once they are published.</p>
+            </li>
+          </ol>
+          <figure class="schematic fig">
+<svg viewBox="0 0 600 300" role="img" aria-labelledby="sx1-t sx1-d">
+                <title id="sx1-t">RIVER-AI coupling schematic</title>
+                <desc id="sx1-d">A groundwater emulator and reservoir policies (rule-based or LLM) exchange water with the MOSART-Urban river network, which produces streamflow compared with gauges. The exchange interfaces are highlighted.</desc>
+                <defs>
+                  <marker id="sx1-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="sx-head" d="M0 0 L10 5 L0 10 z" /></marker>
+                  <marker id="sx1-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="sx-head-m" d="M0 0 L10 5 L0 10 z" /></marker>
+                </defs>
+                <rect class="sx-box" x="10" y="40" width="160" height="92" rx="12" />
+                <text class="sx-title" x="90" y="74" text-anchor="middle">Groundwater</text>
+                <text class="sx-title" x="90" y="96" text-anchor="middle">emulator</text>
+                <text class="sx-sub" x="90" y="119" text-anchor="middle">trained on ParFlow</text>
+
+                <rect class="sx-box sx-core" x="220" y="40" width="160" height="92" rx="12" />
+                <text class="sx-title" x="300" y="76" text-anchor="middle">MOSART-Urban</text>
+                <text class="sx-sub" x="300" y="98" text-anchor="middle">river network</text>
+                <text class="sx-sub" x="300" y="118" text-anchor="middle">routing</text>
+
+                <rect class="sx-box" x="430" y="40" width="160" height="92" rx="12" />
+                <text class="sx-title" x="510" y="74" text-anchor="middle">Reservoir</text>
+                <text class="sx-title" x="510" y="96" text-anchor="middle">policies</text>
+                <text class="sx-sub" x="510" y="119" text-anchor="middle">rule-based · LLM</text>
+
+                <line class="sx-arrow" x1="176" y1="86" x2="214" y2="86" marker-start="url(#sx1-a)" marker-end="url(#sx1-a)" />
+                <line class="sx-arrow" x1="386" y1="86" x2="424" y2="86" marker-start="url(#sx1-a)" marker-end="url(#sx1-a)" />
+                <text class="sx-label" x="195" y="162" text-anchor="middle">river ↔ aquifer</text>
+                <text class="sx-label" x="195" y="181" text-anchor="middle">exchange</text>
+                <text class="sx-label" x="405" y="162" text-anchor="middle">inflow ↔</text>
+                <text class="sx-label" x="405" y="181" text-anchor="middle">release</text>
+
+                <line class="sx-arrow sx-plain" x1="300" y1="136" x2="300" y2="206" marker-end="url(#sx1-m)" />
+                <rect class="sx-box" x="220" y="210" width="160" height="74" rx="12" />
+                <text class="sx-title" x="300" y="242" text-anchor="middle">Streamflow</text>
+                <text class="sx-sub" x="300" y="265" text-anchor="middle">vs. USGS gauges</text>
+              </svg>
+            <figcaption><span class="figno">Sketch</span><span>Highlighted arrows are the interfaces I build and test.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ms-title">
+      <div class="wrap two-col">
+        <div>
+          <h2 id="ms-title">Milestones</h2>
+          <ul class="milestones">
+            <li><span class="when">July 2026</span>RIVER-AI selected for a DOE Genesis Mission award.</li>
+            <li><span class="when">October 2026</span>Genesis Mission Hands-on Hackathon at Argonne National Laboratory (October 14–16), which drew more than 450 participants from 185 teams. I attended with a colleague for the RIVER-AI team. <a href="https://events.cels.anl.gov/event/942/overview" target="_blank" rel="noopener">Event ↗</a></li>
+            <li><span class="when">November 2026</span>Groundwater-emulator exchange running inside the river model on GPU nodes; LLM reservoir policies coupled into multi-year simulations.</li>
+            <li><span class="when">Next</span>Scientific evaluation of the coupled system, and publication.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>How I use AI to do the research</h2>
+          <p>Besides putting AI inside the model, I use AI coding agents for the work around it: reading model code, running diagnostics, documenting, and coordinating jobs on supercomputers.</p>
+          <p>Each agent gets a fixed task, permissions, compute budget and output folder. A separate reviewer agent and then I check the work, and nothing counts until the numbers close. This independent review has already caught a real accounting error, which was then fixed. I prepared a group briefing and a setup video so colleagues can use the same tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-strip">
+      <div class="wrap">
+        <p class="kicker">More</p>
+        <p><a class="arrow-link" href="projects.html">All projects</a> &nbsp;·&nbsp; <a class="arrow-link" href="publications.html">Publications</a> &nbsp;·&nbsp; <a href="mailto:lingboli6@gmail.com">lingboli6@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Lingbo Li · Bethlehem, Pennsylvania</span>
+      <span>Last updated November 2026</span>
+    </div>
+  </footer>
+</body>
+</html>

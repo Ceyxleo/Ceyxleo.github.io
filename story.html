@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The RIVER-AI story — Lingbo Li</title>
+  <meta name="description" content="A one-minute, step-by-step story of RIVER-AI: a river network, groundwater, AI reservoir decisions, and a water balance that has to close." />
+  <link rel="canonical" href="https://ceyxleo.github.io/story.html" />
+  <meta name="theme-color" content="#1e4d3a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#faf8f3; --ink:#1a2620; --muted:#5b6660; --green:#1e4d3a; --river:#2f6fb3; --gw:#8a6632; --res:#2f6b50; --ai:#c4851c; --rule:#e4dfd3; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#111714; --ink:#e6ece8; --muted:#a2afa7; --green:#93d1ae; --river:#6fa8e6; --gw:#d6ad6c; --res:#74bb94; --ai:#f0b54a; --rule:#25302a; } }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body { background: var(--bg); color: var(--ink); font: 16px/1.55 Inter, system-ui, sans-serif; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-bottom: 1px solid var(--rule); }
+    header a { color: var(--muted); text-decoration: none; font-size: .92rem; }
+    header a:hover { color: var(--green); }
+    .brand { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; color: var(--ink); }
+    #stage { width: 100%; height: 100%; min-height: 0; cursor: pointer; display: block; }
+    footer { border-top: 1px solid var(--rule); padding: 16px 24px 20px; display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 8px 24px; align-items: center; }
+    #caption h2 { font-family: "Source Serif 4", Georgia, serif; font-size: clamp(1.15rem, 2.4vw, 1.5rem); margin: 0 0 4px; }
+    #caption p { margin: 0; color: var(--muted); max-width: 70ch; }
+    .ctrl { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+    .ctrl button { font: inherit; font-weight: 600; border: 1px solid var(--green); background: transparent; color: var(--green); border-radius: 6px; padding: 7px 14px; cursor: pointer; }
+    .ctrl button.primary { background: var(--green); color: var(--bg); }
+    .ctrl button:disabled { opacity: .35; cursor: default; }
+    .dots { display: flex; gap: 6px; }
+    .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--rule); }
+    .dots i.on { background: var(--green); }
+    /* drawing */
+    .lyr { opacity: 0; transition: opacity .9s ease; }
+    .lyr.on { opacity: 1; }
+    .river { fill: none; stroke: var(--river); stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2.2s ease; }
+    .on .river { stroke-dashoffset: 0; }
+    .gw-arrow { stroke: var(--gw); stroke-width: 3; fill: none; stroke-dasharray: 6 6; animation: flow 1.2s linear infinite; }
+    .gw-arrow.out { animation-direction: reverse; }
+    @keyframes flow { to { stroke-dashoffset: -12; } }
+    .aquifer { fill: var(--gw); opacity: .12; }
+    .label { fill: var(--muted); font: 500 15px Inter, sans-serif; }
+    .label.strong { fill: var(--ink); font-weight: 600; }
+    .dam { fill: var(--res); }
+    .pool { fill: var(--river); opacity: .25; }
+    .chip { fill: var(--bg); stroke: var(--ai); stroke-width: 2; }
+    .chip-t { fill: var(--ai); font: 700 14px Inter, sans-serif; }
+    .pulse { animation: pulse 1.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    @keyframes pulse { 50% { transform: scale(1.08); } }
+    .ledger { fill: var(--bg); stroke: var(--green); stroke-width: 2; }
+    .ledger-t { fill: var(--ink); font: 600 16px Inter, sans-serif; }
+    .check { fill: none; stroke: var(--green); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; transition: stroke-dashoffset .8s ease .4s; }
+    .on .check { stroke-dashoffset: 0; }
+    .final { fill: var(--ink); font: 600 26px "Source Serif 4", Georgia, serif; }
+    .final-s { fill: var(--muted); font: 500 16px Inter, sans-serif; }
+    @media (prefers-reduced-motion: reduce) { .lyr, .river, .check { transition: none; } .gw-arrow, .pulse { animation: none; } }
+    @media (max-width: 640px) { footer { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="./">Lingbo Li</a>
+    <a href="river-ai.html">Full project page →</a>
+  </header>
+
+  <svg id="stage" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="caption-title">
+    <!-- 1 river network -->
+    <g class="lyr" data-step="0">
+      <path class="river" pathLength="1" stroke-width="7" d="M500 40 C 490 120, 520 190, 500 260 S 470 380, 520 450 S 600 520, 640 540" />
+      <path class="river" pathLength="1" stroke-width="4" d="M380 80 C 410 140, 450 200, 500 230" />
+      <path class="river" pathLength="1" stroke-width="4" d="M640 90 C 610 160, 560 210, 505 250" />
+      <path class="river" pathLength="1" stroke-width="4" d="M330 300 C 390 320, 450 360, 495 380" />
+      <path class="river" pathLength="1" stroke-width="3" d="M690 300 C 640 330, 580 380, 520 420" />
+      <text class="label" x="660" y="535">to Trenton</text>
+    </g>
+    <!-- 2 groundwater -->
+    <g class="lyr" data-step="1">
+      <rect class="aquifer" x="60" y="460" width="880" height="90" rx="10" />
+      <text class="label" x="80" y="530">aquifer · groundwater emulator</text>
+      <path class="gw-arrow" d="M470 470 L 490 300" />
+      <path class="gw-arrow out" d="M560 470 L 515 330" />
+      <text class="label" x="250" y="410">groundwater feeds the river…</text>
+      <text class="label" x="560" y="410">…or the river recharges it</text>
+    </g>
+    <!-- 3 reservoir + AI decision -->
+    <g class="lyr" data-step="2">
+      <ellipse class="pool" cx="420" cy="140" rx="70" ry="28" />
+      <rect class="dam" x="455" y="150" width="14" height="40" rx="3" />
+      <text class="label strong" x="250" y="110">reservoir</text>
+      <g class="pulse">
+        <rect class="chip" x="230" y="170" width="160" height="54" rx="10" />
+        <text class="chip-t" x="310" y="194" text-anchor="middle">AI policy</text>
+        <text class="label" x="310" y="214" text-anchor="middle">release today?</text>
+      </g>
+      <path class="gw-arrow" d="M392 197 L 452 175" style="stroke: var(--ai)" />
+    </g>
+    <!-- 4 water balance -->
+    <g class="lyr" data-step="3">
+      <rect class="ledger" x="700" y="120" width="250" height="150" rx="12" />
+      <text class="ledger-t" x="720" y="155">every day, every reservoir</text>
+      <text class="label" x="720" y="185">inflow − release − Δstorage</text>
+      <text class="label" x="720" y="212">river ↔ aquifer exchange</text>
+      <path class="check" d="M880 236 l 16 16 l 30 -36" />
+      <text class="label strong" x="720" y="250">must close</text>
+    </g>
+    <!-- 5 closing line -->
+    <g class="lyr" data-step="4">
+      <rect x="0" y="0" width="1000" height="560" style="fill: var(--bg)" opacity=".86" />
+      <text class="final" x="500" y="240" text-anchor="middle">AI inside a physics-based river model —</text>
+      <text class="final" x="500" y="280" text-anchor="middle">and checked by the water balance.</text>
+      <text class="final-s" x="500" y="330" text-anchor="middle">RIVER-AI · DOE Genesis Mission · upper Delaware River Basin</text>
+    </g>
+  </svg>
+
+  <footer>
+    <div id="caption" aria-live="polite"><h2 id="caption-title"></h2><p></p></div>
+    <div class="ctrl">
+      <button id="prev" type="button" aria-label="Previous step">←</button>
+      <div class="dots" aria-hidden="true"></div>
+      <button id="next" class="primary" type="button">Next →</button>
+    </div>
+  </footer>
+
+  <script>
+    const steps = [
+      ["A river network", "Rivers gather water from thousands of tributaries. My base is MOSART, a physics-based river-routing model."],
+      ["Groundwater, from a neural emulator", "A partner team's PyTorch emulator of 3D subsurface flow stands in for an expensive groundwater model. I wrote the exchange that lets water move between aquifer and river."],
+      ["A reservoir decision every day", "At each daily step, reservoir policies from a partner team — including LLM-based ones — decide how much water to release. I built the interface that asks them, in river-network order."],
+      ["The books have to balance", "Every decision and every exchange is checked against the water balance, and every change is regression-tested before it informs the science."],
+      ["The point", "AI where it helps, physics where it matters, and checks everywhere. Results will be shared once published."]
+    ];
+    const layers = [...document.querySelectorAll(".lyr")];
+    const dots = document.querySelector(".dots");
+    steps.forEach(() => dots.appendChild(document.createElement("i")));
+    const h = document.querySelector("#caption h2"), p = document.querySelector("#caption p");
+    const prev = document.getElementById("prev"), next = document.getElementById("next");
+    let i = 0;
+    function show(n) {
+      i = Math.max(0, Math.min(steps.length - 1, n));
+      layers.forEach(l => l.classList.toggle("on", +l.dataset.step <= i));
+      [...dots.children].forEach((d, k) => d.classList.toggle("on", k <= i));
+      h.textContent = steps[i][0]; p.textContent = steps[i][1];
+      prev.disabled = i === 0;
+      next.textContent = i === steps.length - 1 ? "Project page →" : "Next →";
+    }
+    next.onclick = () => i === steps.length - 1 ? (location.href = "river-ai.html") : show(i + 1);
+    prev.onclick = () => show(i - 1);
+    document.getElementById("stage").onclick = () => show(i + 1);
+    addEventListener("keydown", e => {
+      if (["ArrowRight", " ", "PageDown"].includes(e.key)) { e.preventDefault(); show(i + 1); }
+      if (["ArrowLeft", "PageUp"].includes(e.key)) show(i - 1);
+    });
+    requestAnimationFrame(() => show(0));
+  </script>
+</body>
+</html>
